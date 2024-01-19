@@ -13,7 +13,7 @@ function devolverCasilla(i, j) {
 }
 
 function devolverCasillaT(i, j) {
-    if (i == 0) {
+    if (i == 0 || i == 8) {
         return document.getElementById(i + "_" + j)
     }
     else {
@@ -22,7 +22,7 @@ function devolverCasillaT(i, j) {
 
 }
 function devolverCasillaB(i, j) {
-    if (i == 7) {
+    if (i == 7 || i == 15) {
         return document.getElementById(i + "_" + j)
     }
     else {
@@ -52,13 +52,13 @@ function devolverCasillaL(i, j) {
 
 function casillaOnClic(i, j) {
     console.log("Hizo Click en", i, j);
+    console.log("Hizo Click en", 15 - i, 7 - j);
+    let casilla = devolverCasilla(i, j);
 
-    const casilla = devolverCasilla(i, j);
-
-    const casillaT = devolverCasillaT(i, j);
-    const casillaB = devolverCasillaB(i, j);
-    const casillaR = devolverCasillaR(i, j);
-    const casillaL = devolverCasillaL(i, j);
+    let casillaT = devolverCasillaT(i, j);
+    let casillaB = devolverCasillaB(i, j);
+    let casillaR = devolverCasillaR(i, j);
+    let casillaL = devolverCasillaL(i, j);
 
     let idCasilla = i + "_" + j;
 
@@ -89,6 +89,26 @@ function casillaOnClic(i, j) {
         casillaAntL = casillaL
 
 
+        casilla = devolverCasilla(15 - i, 7 - j);
+        casillaT = devolverCasillaT(15 - i, 7 - j);
+        casillaB = devolverCasillaB(15 - i, 7 - j);
+        casillaR = devolverCasillaR(15 - i, 7 - j);
+        casillaL = devolverCasillaL(15 - i, 7 - j);
+
+        casilla.innerHTML = "X";
+        casillaT.innerHTML = "X";
+        casillaB.innerHTML = "X";
+        casillaR.innerHTML = "X";
+        casillaL.innerHTML = "X";
+
+
+        casillaAnt = casilla
+        casillaAntT = casillaT
+        casillaAntB = casillaB
+        casillaAntR = casillaR
+        casillaAntL = casillaL
+
+
         numeroTurno = 2;
 
 
@@ -101,6 +121,25 @@ function casillaOnClic(i, j) {
         casillaAntR.innerHTML = "";
         casillaAntL.innerHTML = "";
 
+
+        casilla.innerHTML = "X";
+        casillaT.innerHTML = "X";
+        casillaB.innerHTML = "X";
+        casillaR.innerHTML = "X";
+        casillaL.innerHTML = "X";
+
+
+        casillaAnt = casilla
+        casillaAntT = casillaT
+        casillaAntB = casillaB
+        casillaAntR = casillaR
+        casillaAntL = casillaL
+
+        casilla = devolverCasilla(15 - i, 7 - j);
+        casillaT = devolverCasillaT(15 - i, 7 - j);
+        casillaB = devolverCasillaB(15 - i, 7 - j);
+        casillaR = devolverCasillaR(15 - i, 7 - j);
+        casillaL = devolverCasillaL(15 - i, 7 - j);
 
         casilla.innerHTML = "X";
         casillaT.innerHTML = "X";
