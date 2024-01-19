@@ -1,6 +1,6 @@
 
 let numeroTurno = 1
-
+let casillaAnt = (0, 0)
 
 
 function devolverCasilla(i, j) {
@@ -10,23 +10,29 @@ function devolverCasilla(i, j) {
 function casillaOnClic(i, j) {
     console.log("Hizo Click en", i, j);
 
-    casilla = devolverCasilla(i, j);
+    const casilla = devolverCasilla(i, j);
+
     let idCasilla = i + "_" + j;
 
     if (numeroTurno == 1) {
-        numeroTurno = 2;
+
+        casillaAnt.innerHTML = "";
         casilla.innerHTML = "X";
+        casillaAnt = casilla
+        numeroTurno = 2;
 
 
     } else {
-        location.reload();
-        numeroTurno = 1;
 
+
+        casillaAnt.innerHTML = "";
         casilla.innerHTML = "X";
+        casillaAnt = casilla
+        numeroTurno = 1;
 
 
     }
 
-    casilla.disabled = true;
+
 }
 
